@@ -20,4 +20,3 @@ source $TOOLS/gh.zsh
 source $TOOLS/gradle.zsh
 source $TOOLS/man.zsh
 source $TOOLS/node.zsh
-source $TOOLS/yarn.zsh
