@@ -19,5 +19,7 @@
   },
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "gitlens.mode.active": "zen",
-  "workbench.activityBar.visible": true
+  "workbench.activityBar.visible": true,
+  "omnisharp.useGlobalMono": "always",
+  "csharp.referencesCodeLens.enabled": false
 }
