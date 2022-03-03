@@ -14,7 +14,3 @@
 	path = dependencies/dotbot
 	url = git@github.com:anishathalye/dotbot.git
 	ignore = dirty
-[submodule "dependencies/jenv"]
-	path = dependencies/jenv
-	url = git@github.com:jenv/jenv.git
-	ignore = dirty

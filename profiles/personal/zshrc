@@ -10,7 +10,6 @@ source $ZSH/prompt.zsh
 export PATH=~/.bin:$PATH
 
 source $TOOLS/brew/zsh
-source $TOOLS/java/zsh
 source $TOOLS/python/zsh
 source $TOOLS/vscode/zsh
 source $TOOLS/firefox.zsh
