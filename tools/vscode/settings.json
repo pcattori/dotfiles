@@ -11,25 +11,12 @@
   "editor.guides.bracketPairs":"active",
   "explorer.confirmDragAndDrop": false,
   "extensions.ignoreRecommendations": false,
-
   "python.formatting.provider": "black",
-
   "eslint.format.enable": true,
-  "prettier.semi": false,
-
-  "javascript.format.enable": false,
-  "javascript.suggestionActions.enabled": false,
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
   },
-
-  "typescript.format.enable": false,
-  "typescript.suggestionActions.enabled": false,
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "gitlens.mode.active": "zen",
   "workbench.activityBar.visible": true
