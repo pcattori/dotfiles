@@ -1,9 +1,7 @@
 bungcip.better-toml
-CoenraadS.bracket-pair-colorizer-2
 dbaeumer.vscode-eslint
 esbenp.prettier-vscode
 formulahendry.auto-rename-tag
-ivory-lab.jenkinsfile-support
 mgmcdermott.vscode-language-babel
 ms-python.python
 ricard.postcss

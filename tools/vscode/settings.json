@@ -1,6 +1,5 @@
 {
-  "window.zoomLevel": 1,
-  "workbench.colorTheme": "Night Owl",
+  "window.zoomLevel": 2,
   "workbench.startupEditor": "newUntitledFile",
   "editor.fontFamily": "Fira Code",
   "editor.fontLigatures": true,
@@ -21,5 +20,13 @@
   "gitlens.mode.active": "zen",
   "workbench.activityBar.visible": true,
   "omnisharp.useGlobalMono": "always",
-  "csharp.referencesCodeLens.enabled": false
+  "csharp.referencesCodeLens.enabled": false,
+  "workbench.colorTheme": "Night Owl",
+  "workbench.iconTheme": "vscode-icons",
+  "editor.tabSize": 2,
+  "editor.renderWhitespace": "all",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "vsicons.dontShowNewVersionMessage": true
 }
