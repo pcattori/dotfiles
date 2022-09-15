@@ -1,0 +1,15 @@
+
+{
+  "recommendations": [
+    "bungcip.better-toml",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "formulahendry.auto-rename-tag",
+    "mgmcdermott.vscode-language-babel",
+    "ms-python.python",
+    "ricard.postcss",
+    "sdras.night-owl",
+    "VisualStudioExptTeam.vscodeintellicode",
+    "vscodevim.vim"
+  ]
+}
