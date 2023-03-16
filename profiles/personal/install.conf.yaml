@@ -10,7 +10,6 @@
     - git submodule update --init --recursive
 
 - link:
-    ~/.bin/bat: tools/bat
     ~/.czrc: tools/commitizen/czrc
     ~/.gitconfig: tools/git/gitconfig
     # ~/.config/nvim: tools/nvim
