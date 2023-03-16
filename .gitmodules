@@ -1,15 +1,3 @@
-[submodule "dependencies/fzf"]
-	path = dependencies/fzf
-	url = git@github.com:junegunn/fzf.git
-[submodule "dependencies/pyenv"]
-	path = dependencies/pyenv
-	url = git@github.com:pyenv/pyenv.git
-[submodule "dependencies/vim-plug"]
-	path = dependencies/vim-plug
-	url = git@github.com:junegunn/vim-plug.git
-[submodule "dependencies/zplug"]
-	path = dependencies/zplug
-	url = git@github.com:zplug/zplug.git
 [submodule "dependencies/dotbot"]
 	path = dependencies/dotbot
 	url = git@github.com:anishathalye/dotbot.git

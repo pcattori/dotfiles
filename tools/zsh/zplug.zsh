@@ -1,3 +1,5 @@
+# install: https://github.com/zplug/zplug#installation
+
 export ZPLUG_HOME=$HOME/.zplug
 source $ZPLUG_HOME/init.zsh
 
@@ -6,7 +8,6 @@ zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/ripgrep", from:oh-my-zsh
 zplug "Aloxaf/fzf-tab", from:github, defer:2
 zplug "zsh-users/zsh-autosuggestions", defer:2 # fish-style auto-suggestions
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=242"
 
 # other
 zplug "plugins/wd", from:oh-my-zsh # new `jump`

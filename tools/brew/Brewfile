@@ -1,6 +1,5 @@
 tap "homebrew/core"
 
-brew "adr-tools"
 brew "fd"
 brew "git"
 brew "gh"

@@ -4,7 +4,7 @@
     "source.fixAll.eslint": true
   },
   "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-  "editor.fontFamily": "Fira Code",
+  "editor.fontFamily": "Fira Code, Monaco, 'Courier New', monospace, 'Apple Color Emoji'",
   "editor.fontLigatures": true,
   "editor.formatOnSave": true,
   "editor.guides.bracketPairs":"active",
@@ -18,12 +18,11 @@
   "gitlens.mode.active": "zen",
   "vsicons.dontShowNewVersionMessage": true,
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "window.zoomLevel": 2,
-  "workbench.activityBar.visible": true,
-  "workbench.colorTheme": "Night Owl",
+  "window.zoomLevel": 1,
   "workbench.iconTheme": "vscode-icons",
   "workbench.startupEditor": "newUntitledFile",
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "workbench.colorTheme": "Night Owl"
 }
