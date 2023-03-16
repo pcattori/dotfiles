@@ -14,6 +14,6 @@
     ~/.gitconfig: tools/git/gitconfig
     # ~/.config/nvim: tools/nvim
     ~/.ssh/config: tools/ssh/config
-    ~/tools: tools
+    ~/.tools: tools
     "~/Library/Application Support/Code/User/settings.json": tools/vscode/settings.json
     ~/.zshrc: profiles/personal/zshrc
