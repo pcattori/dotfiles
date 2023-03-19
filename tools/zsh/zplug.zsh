@@ -10,7 +10,7 @@ zplug "Aloxaf/fzf-tab", from:github, defer:2
 zplug "zsh-users/zsh-autosuggestions", defer:2 # fish-style auto-suggestions
 
 # other
-zplug "plugins/wd", from:oh-my-zsh # new `jump`
+zplug "mfaerevaag/wd", as:command, use:"wd.sh", hook-load:"wd() { . $ZPLUG_REPOS/mfaerevaag/wd/wd.sh }"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 # Install plugins if there are plugins that have not been installed
