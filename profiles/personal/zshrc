@@ -9,6 +9,7 @@ source $ZSH/prompt.zsh
 
 export PATH=~/.bin:$PATH
 
+source $TOOLS/bat/zsh
 source $TOOLS/brew/zsh
 source $TOOLS/deno.zsh
 source $TOOLS/deno-deploy.zsh
