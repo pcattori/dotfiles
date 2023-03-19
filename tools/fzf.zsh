@@ -21,3 +21,5 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS"
  --color=info:#9ccfd8,prompt:#f6c177,pointer:#c4a7e7
  --color=marker:#ebbcba,spinner:#eb6f92,header:#ebbcba"
 
+zstyle ':fzf-tab:*' show-group none
+
