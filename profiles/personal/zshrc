@@ -11,6 +11,7 @@ export PATH=~/.bin:$PATH
 
 source $TOOLS/bat/zsh
 source $TOOLS/brew/zsh
+source $TOOLS/bril.zsh
 source $TOOLS/deno.zsh
 source $TOOLS/deno-deploy.zsh
 source $TOOLS/python/zsh
