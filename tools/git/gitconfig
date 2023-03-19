@@ -11,6 +11,7 @@
 [alias]
     co = checkout
     st = status --short --branch
+    diffs = diff --staged
     ci = commit
     br = branch
     rb = rebase
