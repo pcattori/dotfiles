@@ -17,7 +17,7 @@
     rbi = rebase --interactive
     rba = rebase --abort
     rbc = rebase --continue
-    unstage = reset HEAD
+    unstage = reset HEAD --
     untrack = rm --cached
     l = log --graph --oneline --decorate
     ll = log --graph --oneline --decorate --branches --tags
