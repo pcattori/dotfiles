@@ -9,4 +9,5 @@ alias rm="trash"
 
 alias b="bat"
 alias g="git"
-alias v="nvim"
+alias v="NVIM_APPNAME=nvim-pcattori nvim"
+alias z="NVIM_APPNAME=nvim-lazy nvim"
