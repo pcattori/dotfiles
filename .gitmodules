@@ -1,4 +1,0 @@
-[submodule "dependencies/dotbot"]
-	path = dependencies/dotbot
-	url = git@github.com:anishathalye/dotbot.git
-	ignore = dirty

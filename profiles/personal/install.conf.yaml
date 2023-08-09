@@ -5,10 +5,6 @@
 
 - clean: ["~"]
 
-- shell:
-    - git submodule sync --recursive
-    - git submodule update --init --recursive
-
 - link:
     ~/.config/bat/themes: tools/bat/themes
     ~/.czrc: tools/commitizen/czrc
