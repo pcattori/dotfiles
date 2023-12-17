@@ -14,5 +14,5 @@ brew install dotbot
 ## Usage
 
 ```sh
-dotbot -d . -c <profile>
+dotbot -d . -c profiles/<profile>/dotbot.yaml
 ```
