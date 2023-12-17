@@ -1,4 +1,5 @@
-# zplug
+# zplug =======================================================================
+
 export ZPLUG_HOME=$HOME/.zplug
 source $ZPLUG_HOME/init.zsh
 
@@ -9,7 +10,7 @@ zplug "zsh-users/zsh-autosuggestions", defer:2 # fish-style auto-suggestions
 zplug "mfaerevaag/wd", as:command, use:"wd.sh", hook-load:"wd() { . $ZPLUG_REPOS/mfaerevaag/wd/wd.sh }"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
-## Install plugins if there are plugins that have not been installed
+# Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
     if read -q; then
@@ -18,14 +19,16 @@ if ! zplug check --verbose; then
 fi
 zplug load
 
-# prompt
+# prompt ======================================================================
+
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
     PROMPT="ssh@%m ❯ " # %m = host
 else
     PROMPT="❯ "
 fi
 
-# aliases
+# aliases =====================================================================
+
 alias grep='grep --color=auto'
 alias cp='cp -i'
 alias mv='mv -i'
@@ -36,22 +39,25 @@ alias g="git"
 alias v="NVIM_APPNAME=nvim-pcattori nvim"
 alias z="NVIM_APPNAME=nvim-lazy nvim"
 
-# keybindings
+# keybindings =================================================================
 
-## emacs-style editing by default
+# emacs-style editing by default
 bindkey -e
 
-## vi-style editing with <CTRL-x><CTRL-e>
+# vi-style editing with <CTRL-x><CTRL-e>
 autoload edit-command-line; zle -N edit-command-line
 bindkey "^X^E" edit-command-line
 
-# history
+# history =====================================================================
+
 export HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 setopt inc_append_history
 setopt hist_ignore_space
 setopt hist_ignore_all_dups
+
+# tools =======================================================================
 
 export PATH=~/.bin:$PATH
 
