@@ -5,10 +5,10 @@
 - **Organized by feature**
 - **Profiles**
 
-## Install
+## Setup
 
 ```sh
-sh install.sh
+brew install dotbot
 ```
 
 ## Usage
