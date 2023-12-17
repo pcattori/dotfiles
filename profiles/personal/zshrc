@@ -61,7 +61,6 @@ source $TOOLS/bril.zsh
 source $TOOLS/deno.zsh
 source $TOOLS/deno-deploy.zsh
 source $TOOLS/vscode/zsh
-source $TOOLS/firefox.zsh
 source $TOOLS/fzf.zsh
 source $TOOLS/gh.zsh
 source $TOOLS/man.zsh
