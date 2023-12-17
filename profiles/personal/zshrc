@@ -56,7 +56,6 @@ setopt hist_ignore_all_dups
 export PATH=~/.bin:$PATH
 
 TOOLS=~/.tools
-source $TOOLS/bat/zsh
 source $TOOLS/brew/zsh
 source $TOOLS/bril.zsh
 source $TOOLS/deno.zsh

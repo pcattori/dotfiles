@@ -6,7 +6,6 @@
 - clean: ["~"]
 
 - link:
-    ~/.config/bat/themes: tools/bat/themes
     ~/.gitconfig: tools/git/gitconfig
     # ~/.config/nvim: tools/nvim
     ~/.ssh/config: tools/ssh/config
