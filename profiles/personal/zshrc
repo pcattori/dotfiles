@@ -21,3 +21,4 @@ source $TOOLS/fzf.zsh
 source $TOOLS/gh.zsh
 source $TOOLS/man.zsh
 source $TOOLS/node.zsh
+source $TOOLS/ocaml.zsh
