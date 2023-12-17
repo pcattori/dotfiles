@@ -1,15 +1,15 @@
 {
   "editor.bracketPairColorization.enabled": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "explicit"
   },
   "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   "editor.fontFamily": "Fira Code, Monaco, 'Courier New', monospace, 'Apple Color Emoji'",
   "editor.fontLigatures": true,
   "editor.formatOnSave": true,
-  "editor.guides.bracketPairs":"active",
+  "editor.guides.bracketPairs": "active",
   "editor.minimap.enabled": false,
-  "editor.renderWhitespace": "all",
+  "editor.renderWhitespace": "none",
   "editor.suggestSelection": "first",
   "editor.tabSize": 2,
   "eslint.format.enable": true,
@@ -18,11 +18,12 @@
   "gitlens.mode.active": "zen",
   "vsicons.dontShowNewVersionMessage": true,
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "window.zoomLevel": 1,
+  "window.zoomLevel": 3,
   "workbench.iconTheme": "vscode-icons",
   "workbench.startupEditor": "newUntitledFile",
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "workbench.colorTheme": "Night Owl"
+  "workbench.colorTheme": "Rosé Pine"
 }
+
