@@ -5,7 +5,7 @@ alias mv='mv -i'
 # OS-specific aliases
 alias ls='ls -GFh'
 
-alias rm="trash"
+alias x="trash"
 
 alias b="bat"
 alias g="git"
