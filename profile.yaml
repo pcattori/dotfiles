@@ -6,9 +6,9 @@
 - clean: ["~"]
 
 - link:
-    ~/.gitconfig: tools/git/gitconfig
-    # ~/.config/nvim: tools/nvim
-    ~/.ssh/config: tools/ssh/config
-    "~/Library/Application Support/Code/User/settings.json": tools/vscode/settings.json
+    ~/.gitconfig: gitconfig
+    # ~/.config/nvim: nvim
+    ~/.ssh/config: ssh/config
+    "~/Library/Application Support/Code/User/settings.json": vscode/settings.json
     ~/.zsh: zsh
     ~/.zshrc: zshrc
