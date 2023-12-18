@@ -1,0 +1,7 @@
+# telescope.nvim
+brew "fd"
+brew "fzf"
+brew "ripgrep"
+
+# nvim-spectre
+brew "gnu-sed"

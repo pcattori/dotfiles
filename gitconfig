@@ -24,7 +24,7 @@
     ll = log --graph --oneline --decorate --branches --tags
     lll = log --graph --oneline --decorate --all
 [core]
-    editor = "NVIM_APPNAME=nvim-pcattori nvim"
+    editor = nvim
     excludesfile = ~/.gitignore
 [filter "media"]
     clean = git-media-clean %f

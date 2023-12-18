@@ -35,7 +35,7 @@ alias mv='mv -i'
 alias ls='ls -GFh' # MacOS only
 alias x="trash"
 alias g="git"
-alias v="NVIM_APPNAME=nvim-pcattori nvim"
+alias v="nvim"
 
 # keybindings =================================================================
 
