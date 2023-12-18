@@ -1,0 +1,25 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- clean: ["~"]
+
+- link:
+    ~/.gitconfig: tools/git/gitconfig
+    # ~/.config/nvim: tools/nvim
+    ~/.ssh/config: tools/ssh/config
+    "~/Library/Application Support/Code/User/settings.json": tools/vscode/settings.json
+
+    # zsh
+    ~/.zshrc: zshrc
+    ~/.zsh/brew.zsh: tools/brew/zsh
+    ~/.zsh/bril.zsh: tools/bril.zsh
+    ~/.zsh/deno.zsh: tools/deno.zsh
+    ~/.zsh/deno-deploy.zsh: tools/deno-deploy.zsh
+    ~/.zsh/vscode.zsh: tools/vscode/zsh
+    ~/.zsh/fzf.zsh: tools/fzf.zsh
+    ~/.zsh/gh.zsh: tools/gh.zsh
+    ~/.zsh/man.zsh: tools/man.zsh
+    ~/.zsh/node.zsh: tools/node.zsh
+    ~/.zsh/ocaml.zsh: tools/ocaml.zsh

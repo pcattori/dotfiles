@@ -57,18 +57,8 @@ setopt inc_append_history
 setopt hist_ignore_space
 setopt hist_ignore_all_dups
 
-# tools =======================================================================
+# .zsh ========================================================================
 
-export PATH=~/.bin:$PATH
-
-TOOLS=~/.tools
-source $TOOLS/brew/zsh
-source $TOOLS/bril.zsh
-source $TOOLS/deno.zsh
-source $TOOLS/deno-deploy.zsh
-source $TOOLS/vscode/zsh
-source $TOOLS/fzf.zsh
-source $TOOLS/gh.zsh
-source $TOOLS/man.zsh
-source $TOOLS/node.zsh
-source $TOOLS/ocaml.zsh
+for file in ~/.zsh/*; do
+    source "$file"
+done
