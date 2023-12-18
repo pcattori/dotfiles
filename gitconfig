@@ -37,4 +37,4 @@
 [pull]
     ff = only
 [fetch]
-	prune = true
+    prune = true
