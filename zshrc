@@ -1,3 +1,9 @@
+# .zsh ========================================================================
+
+for file in ~/.zsh/*; do
+    source "$file"
+done
+
 # zplug =======================================================================
 
 export ZPLUG_HOME=$(brew --prefix)/opt/zplug
@@ -54,9 +60,3 @@ SAVEHIST=10000
 setopt inc_append_history
 setopt hist_ignore_space
 setopt hist_ignore_all_dups
-
-# .zsh ========================================================================
-
-for file in ~/.zsh/*; do
-    source "$file"
-done
