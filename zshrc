@@ -34,10 +34,8 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias ls='ls -GFh' # MacOS only
 alias x="trash"
-alias b="bat"
 alias g="git"
 alias v="NVIM_APPNAME=nvim-pcattori nvim"
-alias z="NVIM_APPNAME=nvim-lazy nvim"
 
 # keybindings =================================================================
 
