@@ -1,6 +1,6 @@
 # zplug =======================================================================
 
-export ZPLUG_HOME=$HOME/.zplug
+export ZPLUG_HOME=$(brew --prefix)/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
 zplug "plugins/git", from:oh-my-zsh
