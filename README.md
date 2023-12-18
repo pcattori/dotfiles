@@ -1,11 +1,6 @@
 # dotfiles
 
-- **Minimal dependencies**
-- **Simple, idempotent installation**
-- **Organized by feature**
-- **Profiles**
-
-## Setup
+## Dependencies
 
 ```sh
 brew install dotbot
@@ -14,5 +9,5 @@ brew install dotbot
 ## Usage
 
 ```sh
-dotbot -d . -c profiles/<profile>/dotbot.yaml
+dotbot -d . -c <profile>
 ```
