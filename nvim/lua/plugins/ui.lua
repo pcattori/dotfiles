@@ -24,7 +24,7 @@ return {
       -- flash
       h("FlashBackdrop", { fg = p.highlight_high })
       h("FlashMatch", { fg = p.pine })
-      h("FlashLabel", { fg = p.foam })
+      h("FlashLabel", { fg = p.gold })
       h("FlashCurrent", { fg = p.love })
 
       -- dashboard
