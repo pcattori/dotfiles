@@ -10,7 +10,7 @@ return {
   {
     "rose-pine/neovim",
     config = function()
-      local h = require("rose-pine.util").highlight
+      local h = require("rose-pine.utilities").highlight
       local p = require("rose-pine.palette")
 
       -- telescope
