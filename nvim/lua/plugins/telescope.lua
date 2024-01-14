@@ -24,6 +24,13 @@ return {
       end,
       desc = "Find Ignored Files",
     },
+    {
+      "<leader>fk",
+      function()
+        require("telescope.builtin").keymaps()
+      end,
+      desc = "Find Keymaps",
+    },
   },
   opts = {
     defaults = {
