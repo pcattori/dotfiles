@@ -4,41 +4,41 @@ return {
   { "NvChad/nvim-colorizer.lua", enabled = false },
 
   {
-    "LazyVim/LazyVim",
-    opts = { colorscheme = "rose-pine" },
+    "rose-pine/neovim",
+    name = "rose-pine",
+    opts = {
+      extend_background_behind_borders = true, -- not sure if this is doing anything
+      highlight_groups = {
+        NormalFloat = { bg = "NONE" },
+        FloatBorder = { fg = "highlight_high", bg = "NONE" },
+
+        DashboardHeader = { fg = "pine" },
+        DashboardIcon = { fg = "foam" },
+        DashboardDesc = { fg = "foam" },
+        DashboardKey = { fg = "gold" },
+        DashboardFooter = { fg = "iris" },
+
+        FlashBackdrop = { fg = "highlight_high" },
+        FlashMatch = { fg = "pine" },
+        FlashLabel = { fg = "gold", bg = "NONE" },
+        FlashCurrent = { fg = "love" },
+
+        TelescopeResultsNormal = { fg = "highlight_high", bg = "NONE" }, -- higher contrast against matching text
+        TelescopePromptBorder = { fg = "highlight_high", bg = "NONE" },
+        TelescopePreviewBorder = { fg = "highlight_high", bg = "NONE" },
+        TelescopeResultsBorder = { fg = "highlight_high", bg = "NONE" },
+
+        NotifyERRORBorder = { bg = "NONE" },
+        NotifyWARNBorder = { bg = "NONE" },
+        NotifyINFOBorder = { bg = "NONE" },
+        NotifyDEBUGBorder = { bg = "NONE" },
+        NotifyTRACEBorder = { bg = "NONE" },
+      },
+    },
   },
   {
-    "rose-pine/neovim",
-    config = function()
-      local h = require("rose-pine.utilities").highlight
-      local p = require("rose-pine.palette")
-
-      -- telescope
-      h("TelescopePromptBorder", { fg = p.highlight_high, bg = p.base })
-      h("TelescopePromptNormal", { fg = p.highlight_high, bg = p.base })
-      h("TelescopePreviewBorder", { fg = p.highlight_high, bg = p.base })
-      h("TelescopePreviewNormal", { fg = p.highlight_high, bg = p.base })
-      h("TelescopeResultsBorder", { fg = p.highlight_high, bg = p.base })
-      h("TelescopeResultsNormal", { fg = p.highlight_high, bg = p.base })
-
-      -- flash
-      h("FlashBackdrop", { fg = p.highlight_high })
-      h("FlashMatch", { fg = p.pine })
-      h("FlashLabel", { fg = p.gold })
-      h("FlashCurrent", { fg = p.love })
-
-      -- dashboard
-      h("DashboardHeader", { fg = p.pine })
-      h("DashboardFooter", { fg = p.gold }) -- not working for some reason
-      h("DashboardIcon", { fg = p.foam })
-      h("DashboardDesc", { fg = p.foam })
-      h("DashboardKey", { fg = p.gold })
-
-      -- mini.files
-      h("MiniFilesNormal", { bg = p.base })
-      h("MiniFilesBorder", { fg = p.highlight_high, bg = p.base })
-      h("MiniFilesBorderModified", { fg = p.highlight_high, bg = p.base })
-    end,
+    "LazyVim/LazyVim",
+    opts = { colorscheme = "rose-pine" },
   },
 
   -- statusline
@@ -99,8 +99,20 @@ return {
   },
 
   {
+    "hrsh7th/nvim-cmp",
+    opts = {
+      window = {
+        completion = require("cmp").config.window.bordered(),
+        documentation = require("cmp").config.window.bordered(),
+      },
+    },
+  },
+  {
     "folke/noice.nvim",
     opts = {
+      presets = {
+        lsp_doc_border = true,
+      },
       lsp = {
         hover = {
           silent = true,
