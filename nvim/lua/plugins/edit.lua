@@ -3,7 +3,13 @@ local cmp = require("cmp")
 return {
   -- copilot
   { "github/copilot.vim" },
-  { "L3MON4D3/LuaSnip", enabled = false }, -- `<Tab>` keymap conflicts with copilot
+  {
+    "L3MON4D3/LuaSnip",
+    -- `<Tab>` keymap conflicts with copilot
+    keys = function()
+      return {}
+    end,
+  },
 
   -- autodetect spacing
   { "tpope/vim-sleuth", event = "BufEnter" },
