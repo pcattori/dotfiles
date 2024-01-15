@@ -110,6 +110,13 @@ return {
   {
     "folke/noice.nvim",
     opts = {
+      cmdline = {
+        format = {
+          -- fixed in iterm 3.5, waiting for release: https://github.com/ryanoasis/nerd-fonts/issues/1149
+          search_down = { icon = "󰍉" },
+          search_up = { icon = "󰍉" },
+        },
+      },
       presets = {
         lsp_doc_border = true,
       },
