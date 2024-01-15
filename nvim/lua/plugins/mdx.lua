@@ -2,9 +2,7 @@
 
 vim.filetype.add({
   extension = {
-    -- mdx = "mdx",
-    mdx = "markdown.mdx",
-    tsx = "tsx", -- syntax highlighting for tsx code blocks
+    mdx = "mdx",
   },
 })
 
