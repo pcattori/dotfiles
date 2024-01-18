@@ -49,6 +49,7 @@ alias v="nvim"
 bindkey -e
 
 # vi-style editing with <CTRL-x><CTRL-e>
+export EDITOR="nvim"
 autoload edit-command-line; zle -N edit-command-line
 bindkey "^X^E" edit-command-line
 
