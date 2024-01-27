@@ -1,3 +1,6 @@
+local cmp = require("cmp")
+local luasnip = require("luasnip")
+
 return {
   -- autodetect spacing
   { "tpope/vim-sleuth", event = "BufEnter" },
@@ -17,33 +20,31 @@ return {
   -- completion
   {
     "hrsh7th/nvim-cmp",
-    -- adapted from https://github.com/fredrikaverpil/dotfiles/blob/main/nvim-lazyvim/lua/plugins/cmp.lua
-    opts = function(_, opts)
-      local cmp = require("cmp")
-      local luasnip = require("luasnip")
-
-      opts.mapping = vim.tbl_extend("force", opts.mapping, {
-        ["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
+    opts = {
+      experimental = {
+        ghost_text = false,
+      },
+      mapping = {
         ["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
+        ["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
 
+        ["<CR>"] = vim.NIL,
+        ["<C-Space>"] = cmp.mapping(function()
+          if cmp.visible() then
+            cmp.confirm({ select = true })
+          else
+            cmp.complete()
+          end
+        end),
         ["<Tab>"] = cmp.mapping(function(fallback)
           if require("copilot.suggestion").is_visible() then
             require("copilot.suggestion").accept()
-          elseif luasnip.expand_or_locally_jumpable() then
-            luasnip.expand_or_jump()
           else
             fallback()
           end
         end, { "i", "s" }),
-        ["<S-Tab>"] = cmp.mapping(function(fallback)
-          if luasnip.jumpable(-1) then
-            luasnip.jump(-1)
-          else
-            fallback()
-          end
-        end, { "i", "s" }),
-      })
-    end,
+      },
+    },
   },
   {
     "zbirenbaum/copilot.lua",
@@ -60,17 +61,6 @@ return {
           markdown = true,
         },
       })
-
-      -- don't cover up cmp suggestions iwth copilot suggestions
-      local cmp_status_ok, cmp = pcall(require, "cmp")
-      if cmp_status_ok then
-        cmp.event:on("menu_opened", function()
-          vim.tbl_extend("force", vim.b, { copilot_suggestion_hidden = true })
-        end)
-        cmp.event:on("menu_closed", function()
-          vim.tbl_extend("force", vim.b, { copilot_suggestion_hidden = false })
-        end)
-      end
     end,
   },
 
