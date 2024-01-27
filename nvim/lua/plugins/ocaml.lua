@@ -3,6 +3,7 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
+        -- use local lsp installed within project's opam switch
         ocamllsp = { mason = false },
       },
     },
