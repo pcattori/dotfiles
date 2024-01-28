@@ -1,6 +1,3 @@
-local cmp = require("cmp")
-local luasnip = require("luasnip")
-
 return {
   -- autodetect spacing
   { "tpope/vim-sleuth", event = "BufEnter" },
@@ -20,46 +17,23 @@ return {
   -- completion
   {
     "hrsh7th/nvim-cmp",
-    opts = {
-      experimental = {
-        ghost_text = false,
-      },
-      mapping = {
+    opts = function(_, opts)
+      local cmp = require("cmp")
+      local luasnip = require("luasnip")
+      opts.mapping = vim.tbl_extend("force", opts.mapping, {
         ["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
         ["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
 
         ["<CR>"] = vim.NIL,
-        ["<C-Space>"] = cmp.mapping(function()
+        ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.confirm({ select = true })
-          else
-            cmp.complete()
-          end
-        end),
-        ["<Tab>"] = cmp.mapping(function(fallback)
-          if require("copilot.suggestion").is_visible() then
-            require("copilot.suggestion").accept()
+          elseif luasnip.expand_or_jumpable() then
+            luasnip.expand_or_jump()
           else
             fallback()
           end
         end, { "i", "s" }),
-      },
-    },
-  },
-  {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    event = "InsertEnter",
-    config = function()
-      require("copilot").setup({
-        suggestion = {
-          enabled = true,
-          auto_trigger = true,
-          accept = false, -- disable built-in keymapping
-        },
-        filetypes = {
-          markdown = true,
-        },
       })
     end,
   },
