@@ -7,6 +7,5 @@ vim.opt.listchars = {
   precedes = "«",
 }
 
--- start with line numbers disabled
 vim.opt.number = false
 vim.opt.relativenumber = false
