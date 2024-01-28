@@ -64,40 +64,6 @@ return {
     end,
   },
 
-  -- file tree
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    opts = {
-      default_component_configs = {
-        git_status = {
-          symbols = {
-            added = "",
-            modified = "",
-            deleted = "",
-            renamed = "",
-            untracked = "??",
-            staged = "",
-            unstaged = "",
-          },
-        },
-      },
-      window = {
-        fuzzy_finder_mappings = {
-          ["<C-j>"] = "move_cursor_down",
-          ["<C-k>"] = "move_cursor_up",
-        },
-      },
-    },
-  },
-  {
-    "echasnovski/mini.files",
-    opts = {
-      windows = {
-        preview = false,
-      },
-    },
-  },
-
   {
     "hrsh7th/nvim-cmp",
     opts = {

@@ -1,4 +1,27 @@
 return {
+  -- file explorer
+  { "nvim-neo-tree/neo-tree.nvim", enabled = false },
+  { "echasnovski/mini.files", enabled = false },
+  {
+    "stevearc/oil.nvim",
+    lazy = false, -- ensure `oil` is ready when opening a directory
+    opts = {
+      default_file_explorer = true,
+      keymaps = {
+        ["<S-CR>"] = "actions.parent",
+      },
+    },
+    keys = {
+      {
+        "<leader>e",
+        function()
+          require("oil").toggle_float()
+        end,
+        desc = "Toggle file explorer",
+      },
+    },
+  },
+
   -- autodetect spacing
   { "tpope/vim-sleuth", event = "BufEnter" },
 
