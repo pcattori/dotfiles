@@ -8,7 +8,8 @@ return {
     opts = {
       default_file_explorer = true,
       keymaps = {
-        ["<S-CR>"] = "actions.parent",
+        ["<S-h>"] = "actions.parent",
+        ["<S-l>"] = "actions.select",
       },
     },
     keys = {
