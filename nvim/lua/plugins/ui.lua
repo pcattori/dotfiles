@@ -52,6 +52,11 @@ return {
     },
   },
 
+  {
+    "akinsho/bufferline.nvim",
+    opts = { options = { show_buffer_close_icons = false } },
+  },
+
   -- start screen
   {
     "nvimdev/dashboard-nvim",
