@@ -63,8 +63,7 @@ return {
     opts = function(_, dashboard)
       -- fixed in iterm 3.5, waiting for release: https://github.com/ryanoasis/nerd-fonts/issues/1149
       dashboard.config.center[1].icon = "󰍉 "
-      -- search git files if in git repo: https://github.com/LazyVim/LazyVim/pull/2240
-      dashboard.config.center[1].action = require("lazyvim.util").telescope("files")
+
       return dashboard
     end,
   },
