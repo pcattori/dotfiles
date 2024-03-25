@@ -4,7 +4,7 @@
     "source.fixAll.eslint": "explicit"
   },
   "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-  "editor.fontFamily": "Fira Code, Monaco, 'Courier New', monospace, 'Apple Color Emoji'",
+  "editor.fontFamily": "'MonoLisa Nerd Font', Monaco, 'Courier New', monospace, 'Apple Color Emoji'",
   "editor.fontLigatures": true,
   "editor.formatOnSave": true,
   "editor.guides.bracketPairs": "active",
