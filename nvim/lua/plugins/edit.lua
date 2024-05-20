@@ -65,7 +65,7 @@ return {
     "smjonas/inc-rename.nvim",
     keys = { "<leader>cr" },
     config = function()
-      require("inc_rename").setup()
+      require("inc_rename").setup({})
     end,
   },
 
