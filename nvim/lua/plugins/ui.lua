@@ -57,17 +57,6 @@ return {
     opts = { options = { show_buffer_close_icons = false } },
   },
 
-  -- start screen
-  {
-    "nvimdev/dashboard-nvim",
-    opts = function(_, dashboard)
-      -- fixed in iterm 3.5, waiting for release: https://github.com/ryanoasis/nerd-fonts/issues/1149
-      dashboard.config.center[1].icon = "󰍉 "
-
-      return dashboard
-    end,
-  },
-
   {
     "hrsh7th/nvim-cmp",
     opts = {
@@ -80,13 +69,6 @@ return {
   {
     "folke/noice.nvim",
     opts = {
-      cmdline = {
-        format = {
-          -- fixed in iterm 3.5, waiting for release: https://github.com/ryanoasis/nerd-fonts/issues/1149
-          search_down = { icon = "󰍉" },
-          search_up = { icon = "󰍉" },
-        },
-      },
       presets = {
         lsp_doc_border = true,
       },
