@@ -92,15 +92,4 @@ return {
       use_default_keymaps = false,
     },
   },
-
-  -- structural search and replace
-  {
-    "cshuaimin/ssr.nvim",
-    config = function()
-      require("ssr").setup()
-      vim.keymap.set({ "n", "x" }, "<leader>cs", function()
-        require("ssr").open()
-      end)
-    end,
-  },
 }
