@@ -1,0 +1,11 @@
+theme = rose-pine
+# theme = rose-pine-dawn
+
+font-family = "MonoLisa"
+font-style-italic = false
+font-style-bold-italic = false
+font-size = 20
+
+cursor-style = block
+cursor-style-blink = false
+shell-integration-features = no-cursor
