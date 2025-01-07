@@ -1,6 +1,6 @@
 # dotfiles
 
 ```sh
-brew install dotbot
-dotbot -d . -c <profile>
+brew install stow
+stow home -t $HOME
 ```
