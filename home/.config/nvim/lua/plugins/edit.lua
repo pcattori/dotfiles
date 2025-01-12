@@ -19,7 +19,19 @@ return {
     opts = {
       keymap = {
         preset = "super-tab",
+        ["<C-k>"] = { "select_prev", "fallback" },
+        ["<C-j>"] = { "select_next", "fallback" },
       },
+    },
+    dependencies = {
+
+      "neovim/nvim-lspconfig",
+      opts = function()
+        -- disable signature help in insert mode
+        -- otherwise `<C-k>` will conflict with our `blink` keymap
+        local keys = require("lazyvim.plugins.lsp.keymaps").get()
+        keys[#keys + 1] = { "<C-k>", false, mode = "i" }
+      end,
     },
   },
 
