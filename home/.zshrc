@@ -48,6 +48,8 @@ alias v="nvim"
 
 # emacs-style editing by default
 bindkey -e
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
 
 # vi-style editing with <CTRL-x><CTRL-e>
 export EDITOR="nvim"
@@ -56,9 +58,14 @@ bindkey "^X^E" edit-command-line
 
 # history =====================================================================
 
-export HISTFILE=~/.zsh_history
+HISTFILE=~/.zsh_history
 HISTSIZE=10000
-SAVEHIST=10000
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt sharehistory
 setopt inc_append_history
 setopt hist_ignore_space
 setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
