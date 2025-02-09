@@ -1,34 +1,30 @@
-# completions =================================================================
+# zinit =======================================================================
 
-autoload -Uz compinit
-compinit
+# setup
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
+[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+source "${ZINIT_HOME}/zinit.zsh"
+
+# plugins
+zinit light Aloxaf/fzf-tab
+zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-syntax-highlighting
+
+# completions
+for completion in ~/.zsh/completions/*; do
+    zinit ice as"completion"
+    zinit snippet $completion
+done
+autoload -Uz compinit && compinit
+zinit cdreplay -q
 
 # .zsh ========================================================================
 
 for file in ~/.zsh/*; do
     source "$file"
 done
-
-# zplug =======================================================================
-
-export ZPLUG_HOME=$(brew --prefix)/opt/zplug
-source $ZPLUG_HOME/init.zsh
-
-zplug "plugins/git", from:oh-my-zsh
-zplug "plugins/ripgrep", from:oh-my-zsh
-zplug "Aloxaf/fzf-tab", from:github, defer:2
-zplug "zsh-users/zsh-autosuggestions", defer:2 # fish-style auto-suggestions
-zplug "mfaerevaag/wd", as:command, use:"wd.sh", hook-load:"wd() { . $ZPLUG_REPOS/mfaerevaag/wd/wd.sh }"
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
-
-# Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
-zplug load
 
 # prompt ======================================================================
 
