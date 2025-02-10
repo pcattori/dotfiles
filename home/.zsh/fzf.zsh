@@ -1,16 +1,6 @@
-# adapted from .fzf.zsh
+source <(fzf --zsh)
 
-FZF_HOME=$(brew --prefix)/opt/fzf
-export PATH=${FZF_HOME}/bin:$PATH
-
-# defaults
 export FZF_DEFAULT_COMMAND="fd"
-
-# # Auto-completion
-[[ $- == *i* ]] && source "$FZF_HOME/shell/completion.zsh" 2> /dev/null
-
-# Key bindings
-source $FZF_HOME/shell/key-bindings.zsh
 export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
 export FZF_ALT_C_COMMAND="fd --type d"
 
