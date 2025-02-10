@@ -1,4 +1,4 @@
-# zinit =======================================================================
+# zinit ========================================================================
 
 # setup
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -20,13 +20,13 @@ done
 autoload -Uz compinit && compinit
 zinit cdreplay -q
 
-# .zsh ========================================================================
+# .zsh =========================================================================
 
 for file in ~/.zsh/*; do
     source "$file"
 done
 
-# prompt ======================================================================
+# prompt =======================================================================
 
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
     PROMPT="ssh@%m ❯ " # %m = host
@@ -34,7 +34,7 @@ else
     PROMPT="❯ "
 fi
 
-# aliases =====================================================================
+# aliases ======================================================================
 
 alias grep='grep --color=auto'
 alias cp='cp -i'
@@ -44,7 +44,7 @@ alias x="trash"
 alias g="git"
 alias v="nvim"
 
-# keybindings =================================================================
+# keybindings ==================================================================
 
 # emacs-style editing by default
 bindkey -e
@@ -56,7 +56,7 @@ export EDITOR="nvim"
 autoload edit-command-line; zle -N edit-command-line
 bindkey "^X^E" edit-command-line
 
-# history =====================================================================
+# history ======================================================================
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
