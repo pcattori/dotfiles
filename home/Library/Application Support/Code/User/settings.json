@@ -24,6 +24,7 @@
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "workbench.colorTheme": "Rosé Pine"
+  "workbench.colorTheme": "Rosé Pine",
+  "debug.javascript.autoAttachFilter": "smart"
 }
 
