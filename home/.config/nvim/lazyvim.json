@@ -1,11 +1,14 @@
 {
   "extras": [
+    "lazyvim.plugins.extras.coding.mini-surround",
     "lazyvim.plugins.extras.formatting.prettier",
     "lazyvim.plugins.extras.lang.typescript",
-    "lazyvim.plugins.extras.linting.eslint"
+    "lazyvim.plugins.extras.linting.eslint",
+    "lazyvim.plugins.extras.ui.treesitter-context"
   ],
+  "install_version": 7,
   "news": {
-    "NEWS.md": "10960"
+    "NEWS.md": "11866"
   },
-  "version": 7
+  "version": 8
 }

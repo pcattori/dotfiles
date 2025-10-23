@@ -1,7 +1,7 @@
 return {
   -- file explorer
   { "nvim-neo-tree/neo-tree.nvim", enabled = false },
-  { "echasnovski/mini.files", enabled = false },
+  { "nvim-mini/mini.files", enabled = false },
   {
     "stevearc/oil.nvim",
     lazy = false, -- ensure `oil` is ready when opening a directory
