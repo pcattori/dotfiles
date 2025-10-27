@@ -26,12 +26,11 @@ return {
     dependencies = {
 
       "neovim/nvim-lspconfig",
-      opts = function()
+      keys = {
         -- disable signature help in insert mode
         -- otherwise `<C-k>` will conflict with our `blink` keymap
-        local keys = require("lazyvim.plugins.lsp.keymaps").get()
-        keys[#keys + 1] = { "<C-k>", false, mode = "i" }
-      end,
+        { "<C-k>", false, mode = "i" },
+      },
     },
   },
 
