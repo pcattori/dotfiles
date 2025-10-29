@@ -13,10 +13,7 @@ zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-syntax-highlighting
 
 # completions
-for completion in ~/.zsh/completions/*; do
-    zinit ice as"completion"
-    zinit snippet $completion
-done
+fpath=(~/.zsh/completions $fpath)
 autoload -Uz compinit && compinit
 zinit cdreplay -q
 
@@ -73,4 +70,3 @@ setopt hist_find_no_dups
 # completion styling ===========================================================
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-
