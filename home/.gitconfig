@@ -14,6 +14,9 @@
     df = diff
     ds = diff --staged
     ci = commit
+    ca = commit --amend
+    ac = "!git add . && git commit"
+    wip = "!git add . && git commit -m 'wip'"
     br = branch
     rb = rebase
     rbi = rebase --interactive
