@@ -1,4 +1,8 @@
-In all interactions, plans, and commit messages, be extremely concise and sacrifice grammar for the sake of concision.
+## Concision
 
-Only include code comments when code is complex.
-In that case, begin by explaining what is being achieved (not how) touching on why the complexity exists in the first place.
+In all interactions, plans, and commit messages, be extremely concise and sacrifice grammar for the sake of concision.
+Prefer code snippets or structured examples over prose.
+
+## Code comments
+
+Only include code comments when code complexity warrants it.
