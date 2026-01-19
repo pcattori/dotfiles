@@ -17,6 +17,9 @@ fpath=(~/.zsh/completions $fpath)
 autoload -Uz compinit && compinit
 zinit cdreplay -q
 
+# zmv
+autoload -Uz zmv
+
 # .zsh =========================================================================
 
 for file in ~/.zsh/*; do
