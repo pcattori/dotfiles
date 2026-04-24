@@ -4,9 +4,8 @@ brew "fd"
 brew "fzf"
 brew "neovim"
 brew "stow"
-brew "tldr"
 brew "tree"
-brew "zplug"
+brew "zoxide"
 
 # version control
 brew "gh"
