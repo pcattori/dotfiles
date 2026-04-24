@@ -1,6 +1,6 @@
 ---
 name: draft-feature
-description: Iteratively design a feature in a globally-gitignored `.drafts/<feature>/` scratch folder (README, DECISIONS, QUESTIONS). Use when the user wants to design, plan, sketch, or draft a new feature or change to an existing feature.
+description: Iteratively design a feature in a globally-gitignored `.drafts/<feature>/` scratch folder (README, plus DECISIONS/QUESTIONS/FUTURE as needed). Use when the user wants to design, plan, sketch, or draft a new feature or change to an existing feature.
 ---
 
 # Draft Feature
@@ -12,9 +12,10 @@ Scratch space for designing features. Lives in a globally-gitignored `.drafts/` 
 ```
 <repo>/.drafts/
 └── <feature-name>/         # kebab-case
-    ├── README.md
-    ├── DECISIONS.md
-    └── QUESTIONS.md
+    ├── README.md            # always
+    ├── DECISIONS.md         # only if non-obvious choices come up
+    ├── QUESTIONS.md         # only if open questions get parked
+    └── FUTURE.md            # only if out-of-scope ideas come up
 ```
 
 `.drafts/` is ignored via `~/.config/git/ignore` (git's default global excludes file). Do **not** add `.drafts/` to the target repo's `.gitignore`. If `git status` shows it, the global ignore is misconfigured — fix that, don't make a local change.
@@ -23,10 +24,13 @@ Scratch space for designing features. Lives in a globally-gitignored `.drafts/` 
 
 Default mode is **iterative**: start blank, evolve one thing at a time. Don't try to draft the whole design up front. Keep every file short — this is scratch, not a spec.
 
-1. Pick a kebab-case feature name and create `<repo>/.drafts/<feature>/` with empty `README.md`, `DECISIONS.md`, `QUESTIONS.md` (just the H1 in each). Don't ask the user to confirm — they can rename later.
-2. Work iteratively with the user. Each turn, add or refine one thing in the relevant file. README grows as the shape becomes clear; DECISIONS gets entries as non-obvious choices come up.
-3. When you hit a roadblock or open question that would derail momentum, park it in QUESTIONS.md and keep going.
-4. Once README and DECISIONS feel settled, do a pass over QUESTIONS.md — resolve what you can, leave the rest open with context.
+1. Pick a kebab-case feature name and create `<repo>/.drafts/<feature>/README.md` with just the H1. Don't ask the user to confirm — they can rename later. Do **not** create the other files yet.
+2. Work iteratively with the user. Each turn, add or refine one thing. README grows as the shape becomes clear.
+3. Create the other files lazily, only when there's real content for them:
+   - `DECISIONS.md` when a non-obvious choice comes up.
+   - `QUESTIONS.md` when an open question would derail momentum if pursued now — park it and keep going.
+   - `FUTURE.md` when an idea is explicitly out of scope for this draft but worth remembering.
+4. Once README and DECISIONS feel settled, do a pass over QUESTIONS.md (if it exists) — resolve what you can, leave the rest open with context.
 
 ## File templates
 
@@ -81,4 +85,15 @@ Body gives context. Add a bold `**Answer:**` line once resolved. Presence of `**
 
 ## <Next question?>
 ...
+```
+
+### FUTURE.md — out of scope, not forgotten
+
+Park ideas that are explicitly **not** part of this draft but are worth remembering. Keeps the README focused on the current scope without losing future direction. One H2 per item, short context.
+
+```markdown
+# Future
+
+## <Short title of the idea>
+<1–3 sentences: what it is, why it's out of scope now, what would unlock it>
 ```
