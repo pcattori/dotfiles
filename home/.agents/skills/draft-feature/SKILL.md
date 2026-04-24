@@ -1,6 +1,6 @@
 ---
 name: draft-feature
-description: Draft lightweight design docs for an in-flight feature in a per-repo `.drafts/<feature>/` folder (globally gitignored). Scaffolds and iteratively maintains README.md (user-facing what/API/feel), DECISIONS.md (tricky technical choices), QUESTIONS.md (open + resolved questions). Use when the user wants to design, plan, sketch, or draft a new feature or change to an existing feature.
+description: Iteratively design a feature in a globally-gitignored `.drafts/<feature>/` scratch folder (README, DECISIONS, QUESTIONS). Use when the user wants to design, plan, sketch, or draft a new feature or change to an existing feature.
 ---
 
 # Draft Feature
@@ -12,58 +12,64 @@ Scratch space for designing features. Lives in a globally-gitignored `.drafts/` 
 ```
 <repo>/.drafts/
 └── <feature-name>/         # kebab-case
-    ├── README.md           # user-facing: what + API + feel
-    ├── DECISIONS.md        # tricky/non-obvious technical choices
-    └── QUESTIONS.md        # open + resolved questions
+    ├── README.md
+    ├── DECISIONS.md
+    └── QUESTIONS.md
 ```
 
 `.drafts/` is ignored via `~/.config/git/ignore` (git's default global excludes file). Do **not** add `.drafts/` to the target repo's `.gitignore`. If `git status` shows it, the global ignore is misconfigured — fix that, don't make a local change.
 
 ## Workflow
 
-1. Confirm the feature name in kebab-case. Create `<repo>/.drafts/<feature>/` if it doesn't exist.
-2. **Draft first from existing chat context.** Fill in all three files with your best guess. Don't interview the user up front unless there's nothing to go on.
-3. Present the drafts; let the user review and edit.
-4. As the design evolves, update the relevant file. These are living docs, not write-once specs.
+Default mode is **iterative**: start blank, evolve one thing at a time. Don't try to draft the whole design up front. Keep every file short — this is scratch, not a spec.
+
+1. Pick a kebab-case feature name and create `<repo>/.drafts/<feature>/` with empty `README.md`, `DECISIONS.md`, `QUESTIONS.md` (just the H1 in each). Don't ask the user to confirm — they can rename later.
+2. Work iteratively with the user. Each turn, add or refine one thing in the relevant file. README grows as the shape becomes clear; DECISIONS gets entries as non-obvious choices come up.
+3. When you hit a roadblock or open question that would derail momentum, park it in QUESTIONS.md and keep going.
+4. Once README and DECISIONS feel settled, do a pass over QUESTIONS.md — resolve what you can, leave the rest open with context.
 
 ## File templates
 
-### README.md — user-facing only
+### README.md — happy path, sell the feature
 
-No implementation detail. Describe what's being built, what the user touches, and what it feels like to use.
+The README's job is to make a new user excited about the thing. Show what it feels like to use on the happy path. No implementation detail.
+
+Content rules:
+
+- Happy path only. No edge cases, no "what if the file gets big", no failure modes, no migration-from-old-thing caveats. Those go in DECISIONS.md or QUESTIONS.md if they belong anywhere.
+- Lead with concrete code examples. When prose is needed, keep it to a sentence or two — lightweight inline comments beat prose paragraphs around code.
 
 ```markdown
 # <Feature Name>
 
 <1–3 sentences: what this is, what problem it solves>
 
-## Examples
-<concrete usage: code snippets, sample calls, walkthroughs>
-
-## Goals
-
-## Non-goals
-<optional — what this explicitly is not>
+<walk the reader through the feature in the order they'd discover it. Interleave code examples with short prose — each example introduces the next capability. Use H2s only if the journey has natural chapters; otherwise let the prose+code flow.>
 ```
 
 ### DECISIONS.md — tricky choices only
 
-Skip obvious decisions. Capture the ones a future reader (or you in two weeks) would second-guess.
+Skip obvious decisions. Capture the ones a future reader (or you in two weeks) would second-guess. Only list alternatives that were actually deliberated — don't invent hypothetical options.
 
 ```markdown
 # Decisions
 
 ## <Short decision title>
-**Choice:** <what we picked>
 
-**Why:** <reasoning, especially what makes it non-obvious>
+<what we picked, as plain prose directly under the header>
 
-**Alternatives:** <what else we considered and why we didn't pick them>
+**Why**
+
+<reasoning, especially what makes it non-obvious>
+
+**Alternatives**
+
+- `<option>` — <short reason it lost>.
 ```
 
 ### QUESTIONS.md — one H2 per question
 
-Body gives context. Add a bold `**Answer:**` line once resolved. Presence of `**Answer:**` = resolved; absence = open.
+Body gives context. Add a bold `**Answer:**` line once resolved. Presence of `**Answer:**` = resolved; absence = open. Don't delete resolved questions — they're useful history.
 
 ```markdown
 # Questions
@@ -76,10 +82,3 @@ Body gives context. Add a bold `**Answer:**` line once resolved. Presence of `**
 ## <Next question?>
 ...
 ```
-
-## Style
-
-- Keep every file short. This is scratch, not a spec.
-- Prefer concrete examples over abstract description in README.md.
-- Don't pad DECISIONS.md with obvious choices; only record what's non-obvious.
-- Don't delete resolved questions — they're useful history. Just add the `**Answer:**` line.
