@@ -28,7 +28,6 @@
     lll = log --graph --oneline --decorate --all
 [core]
     editor = nvim
-    excludesfile = ~/.gitignore
 [filter "media"]
     clean = git-media-clean %f
     smudge = git-media-smudge %f
