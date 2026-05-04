@@ -73,3 +73,8 @@ setopt hist_find_no_dups
 # completion styling ===========================================================
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
+# that's all folks! =============================================================
+return # anything below this line will not be executed
+# that means tools that inject their own code into this file will be ignored
+# ===============================================================================
