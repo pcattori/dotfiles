@@ -2,5 +2,11 @@
 
 ```sh
 brew install stow
-stow home -t $HOME
+stow -t $HOME home
+```
+
+## profiles
+
+```sh
+stow -t $HOME --override '.*' <profile>
 ```
