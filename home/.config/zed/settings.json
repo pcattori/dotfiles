@@ -7,8 +7,9 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "ui_font_family": "MonoLisa Nerd Font",
-  "buffer_font_family": "MonoLisa Nerd Font",
+  "cli_default_open_behavior": "existing_window",
+  "ui_font_family": "MonoLisa",
+  "buffer_font_family": "MonoLisa",
   "telemetry": {
     "diagnostics": false,
     "metrics": false,
