@@ -1,5 +1,3 @@
-tap "homebrew/core"
-
 brew "fd"
 brew "fzf"
 brew "neovim"
