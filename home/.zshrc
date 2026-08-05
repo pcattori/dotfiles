@@ -43,6 +43,8 @@ alias ls='ls -GFh' # MacOS only
 alias x="trash"
 alias g="git"
 alias v="nvim"
+alias z="zed"
+alias h="herdr"
 
 # keybindings ==================================================================
 
