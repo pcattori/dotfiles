@@ -1,7 +1,7 @@
 {
   "lastChangelogVersion": "0.83.0",
   "theme": "rose-pine",
-  "defaultProvider": "openai",
+  "defaultProvider": "openai-codex",
   "defaultModel": "gpt-5.6-luna",
-  "defaultThinkingLevel": "high"
+  "defaultThinkingLevel": "medium"
 }
