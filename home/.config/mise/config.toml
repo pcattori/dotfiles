@@ -9,7 +9,6 @@ zoxide = "latest"
 
 # Version control
 gh = "latest"
-lazygit = "latest"
 
 # Search & replace
 ast-grep = "latest"
