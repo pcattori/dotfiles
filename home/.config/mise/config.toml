@@ -1,0 +1,32 @@
+[tools]
+node = "lts"
+rust = "stable"
+
+fd = "latest"
+fzf = "latest"
+neovim = "latest"
+zoxide = "latest"
+
+# Version control
+gh = "latest"
+lazygit = "latest"
+
+# Search & replace
+ast-grep = "latest"
+ripgrep = "latest"
+
+# Machine-wide packages from Homebrew; managed with mise bootstrap.
+[bootstrap.packages]
+"brew:git" = "latest"
+"brew:tree" = "latest"
+"brew:pi-coding-agent" = "latest"
+"brew:herdr" = "latest"
+"brew:typst" = "latest"
+
+# Honor project rust-toolchain.toml files instead of overriding them with
+# the global Rust version above.
+[settings]
+idiomatic_version_file_enable_tools = ["rust"]
+
+[dotfiles]
+"~" = { source = "~/dev/dotfiles/home", mode = "symlink-each" }
