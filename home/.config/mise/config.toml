@@ -24,7 +24,7 @@ ripgrep = "latest"
 # Honor project rust-toolchain.toml files instead of overriding them with
 # the global Rust version above.
 [settings]
-idiomatic_version_file_enable_tools = ["rust"]
+idiomatic_version_file_enable_tools = ["node", "rust"]
 
 [dotfiles]
 "~" = { source = "~/dev/dotfiles/home", mode = "symlink-each" }
