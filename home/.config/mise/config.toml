@@ -1,6 +1,5 @@
 [tools]
 node = "lts"
-rust = "stable"
 
 fd = "latest"
 fzf = "latest"
