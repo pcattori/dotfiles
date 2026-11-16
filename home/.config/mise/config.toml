@@ -9,6 +9,7 @@ ripgrep = "latest"
 zoxide = "latest"
 
 [bootstrap.packages]
+"brew-cask:handy" = "latest"
 "brew:git" = "latest"
 "brew:herdr" = "latest"
 "brew:pi-coding-agent" = "latest"
