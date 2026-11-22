@@ -1,39 +1,11 @@
-# zinit ========================================================================
+# antidote =====================================================================
 
-# setup
-ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
-[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
-[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
-source "${ZINIT_HOME}/zinit.zsh"
-
-# plugins
-zinit light Aloxaf/fzf-tab
-zinit light zsh-users/zsh-autosuggestions
-zinit light zsh-users/zsh-completions
-zinit light zsh-users/zsh-syntax-highlighting
-
-# completions
-fpath=(~/.zsh/completions $fpath)
-autoload -Uz compinit && compinit
-zinit cdreplay -q
-
-# zmv
-autoload -Uz zmv
-
-# mise =========================================================================
-
-eval "$(~/.local/bin/mise activate zsh)"
-
-# .zsh =========================================================================
-
-for file in ~/.zsh/*; do
-    source "$file"
-done
+source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
 
 # prompt =======================================================================
 
-if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-    PROMPT="ssh@%m ❯ " # %m = host
+if [[ -n "$SSH_CLIENT" || -n "$SSH_TTY" ]]; then
+    PROMPT="ssh@%m ❯ "
 else
     PROMPT="❯ "
 fi
@@ -43,44 +15,54 @@ fi
 alias grep='grep --color=auto'
 alias cp='cp -i'
 alias mv='mv -i'
-alias ls='ls -GFh' # MacOS only
-alias x="trash"
-alias g="git"
-alias v="nvim"
-alias z="zed"
-alias h="herdr"
-
-# keybindings ==================================================================
-
-# emacs-style editing by default
-bindkey -e
-bindkey '^p' history-search-backward
-bindkey '^n' history-search-forward
-
-# vi-style editing with <CTRL-x><CTRL-e>
-export EDITOR="nvim"
-autoload edit-command-line; zle -N edit-command-line
-bindkey "^X^E" edit-command-line
+alias ls='ls -GFh' # macOS only
+alias g='git'
 
 # history ======================================================================
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=$HISTSIZE
-HISTDUP=erase
+
 setopt sharehistory
-setopt inc_append_history
 setopt hist_ignore_space
 setopt hist_ignore_all_dups
 setopt hist_save_no_dups
-setopt hist_ignore_dups
 setopt hist_find_no_dups
 
-# completion styling ===========================================================
+# keybindings ==================================================================
 
+bindkey -e
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
+
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^X^E' edit-command-line
+
+# completions ==================================================================
+
+eval "$(antidote bundle 'zsh-users/zsh-completions path:src kind:fpath')"
+
+fpath=(~/.zsh/completions $fpath)
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
+autoload -Uz compinit
+compinit
+
+# tools ========================================================================
+
+eval "$(~/.local/bin/mise activate zsh)"
+
+for file in ~/.zsh/*.zsh(N); do
+    source "$file"
+done
+
+# plugins ======================================================================
+
+eval "$(antidote bundle zsh-users/zsh-autosuggestions)"
+eval "$(antidote bundle zsh-users/zsh-syntax-highlighting)"
+
 # that's all folks! =============================================================
-return # anything below this line will not be executed
-# that means tools that inject their own code into this file will be ignored
-# ===============================================================================
+
+return # ignore anything tools append below this line

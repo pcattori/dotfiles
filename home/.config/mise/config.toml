@@ -9,6 +9,7 @@ ripgrep = "latest"
 zoxide = "latest"
 
 [bootstrap.packages]
+"brew:antidote" = "latest"
 "brew-cask:handy" = "latest"
 "brew-cask:t3-code" = "latest"
 "brew-cask:tailscale-app" = "latest"
