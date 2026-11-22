@@ -11,13 +11,14 @@ zoxide = "latest"
 [bootstrap.packages]
 "brew-cask:handy" = "latest"
 "brew-cask:t3-code" = "latest"
+"brew-cask:tailscale-app" = "latest"
 "brew:git" = "latest"
 "brew:pi-coding-agent" = "latest"
 "brew:tree" = "latest"
 "brew:typst" = "latest"
 
 [settings]
-idiomatic_version_file_enable_tools = ["node", "rust"]
+idiomatic_version_file_enable_tools = ["node", "pnpm", "rust"]
 
 [dotfiles]
 "~" = { source = "~/dev/dotfiles/home", mode = "symlink-each" }
